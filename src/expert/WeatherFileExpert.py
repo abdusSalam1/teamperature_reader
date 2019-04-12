@@ -15,9 +15,11 @@ class WeatherFileExert:
     def read_yearly_weather(self, directory_path):
         try:
             readable_files = glob.glob(os.path.join(directory_path, self.FILE_EXTENSION))
+            yearly_weather_reports = []
             for file in readable_files:
                 daily_temperatures = open(file, 'r').readlines()
-                self.get_yearly_temperature_report(daily_temperatures)
+                yearly_weather_reports.append(self.get_yearly_temperature_report(daily_temperatures))
+            return yearly_weather_reports;
         except:
             logging.error('Error while reading file')
 
