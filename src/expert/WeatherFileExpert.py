@@ -19,7 +19,7 @@ class WeatherFileExert:
             for file in readable_files:
                 daily_temperatures = open(file, 'r').readlines()
                 yearly_weather_reports.append(self.get_yearly_temperature_report(daily_temperatures))
-            return yearly_weather_reports;
+            return yearly_weather_reports
         except:
             logging.error('Error while reading file')
 
