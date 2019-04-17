@@ -9,12 +9,9 @@ class WeatherFileExert:
 
     FILE_EXTENSION = "*.txt"
 
-    def __init__(self):
-        pass
-
     def read_yearly_weather(self, directory_path):
         try:
-            readable_files = glob.glob(os.path.join(directory_path, self.FILE_EXTENSION))
+            readable_files = glob.glob(os.path.join(os.path.abspath(directory_path), self.FILE_EXTENSION))
             yearly_weather_reports = []
             for file in readable_files:
                 daily_temperatures = open(file, 'r').readlines()
