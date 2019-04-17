@@ -6,5 +6,7 @@ class WeatherReportExpert:
     weatherFileExpert = {}
 
     def create_weather_report(self):
-        print("asasdsa")
+        print("Reading reports")
         yearly_weather_reports = WeatherFileExpert.WeatherFileExert().read_yearly_weather(self.DIRECTORY_PATH)
+        print("Done reading reports")
+        return yearly_weather_reports

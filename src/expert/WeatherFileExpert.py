@@ -27,4 +27,4 @@ class WeatherFileExert:
         return yearly_temperature_report
 
     def is_valid_temperature(self, data):
-        return not data == "\n" and not data.startswith("<!--") and not data.split(',')[0] == "PKT"
+        return not data == "\n" and not data.startswith("<!--") and not data.split(',')[0] == "PKT" and not data.split(',')[0] == "PKST"

@@ -21,3 +21,7 @@ class YearlyTemperatureReport:
 
     def get_float_value(self, value):
         return float(value) if not value == '' else 0.0
+
+    def to_string(self):
+        return "Weather for year: " + self.year + " is min Temp: " + str(
+            self.min_temperature) + " and max Temp: " + str(self.max_temperature);
