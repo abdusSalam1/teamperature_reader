@@ -12,11 +12,11 @@ class YearlyTemperatureReport:
         self.year = raw_temperature_entries[0].split('-')[0]
 
     def merge_max_temperature(self, max_temperature):
-        if max_temperature != "" and self.max_temperature > max_temperature:
+        if max_temperature != "" and max_temperature > self.max_temperature:
             self.max_temperature = max_temperature
 
     def merge_min_temperature(self, min_temperature):
-        if min_temperature != "" and self.min_temperature > min_temperature:
+        if min_temperature != "" and min_temperature > self.min_temperature:
             self.min_temperature = min_temperature
 
     def get_float_value(self, value):
