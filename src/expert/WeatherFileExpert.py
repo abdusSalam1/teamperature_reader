@@ -6,7 +6,6 @@ from domain.YearlyTemperatureReport import YearlyTemperatureReport
 
 
 class WeatherFileExert:
-
     FILE_EXTENSION = "*.txt"
 
     def read_yearly_weather(self, directory_path):
@@ -16,6 +15,7 @@ class WeatherFileExert:
             for file in readable_files:
                 daily_temperatures = open(file, 'r').readlines()
                 yearly_weather_reports.append(self.get_yearly_temperature_report(daily_temperatures))
+                daily_temperatures.close()
             return yearly_weather_reports
         except:
             logging.error('Error while reading file')
@@ -28,4 +28,4 @@ class WeatherFileExert:
         return yearly_temperature_report
 
     def is_valid_temperature(self, data):
-        return data.strip() and not data.startswith("<!--")
+        return not data == "\n" and not data.startswith("<!--") and not data.split(',')[0] == "PKT"
